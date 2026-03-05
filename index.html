@@ -1,2 +1,349 @@
-<h1>PshoPsha</h1>
-<p>Cultural Show Producers</p>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PshoPsha — Cultural Show Producers</title>
+
+<style>
+  body{
+    margin:0;
+    font-family: system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+    color:#f4efe4;
+    background:
+      radial-gradient(circle at 50% -10%, rgba(214,177,102,.25), transparent 50%),
+      linear-gradient(180deg,#2b0609,#120304);
+  }
+
+  .wrap{
+    max-width:1100px;
+    margin:auto;
+    padding:20px;
+  }
+
+  /* header */
+  header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:10px 0 20px 0;
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+  }
+  .brand img{
+    width:42px;
+    height:42px;
+    border-radius:12px;
+  }
+  .brandName{
+    font-weight:700;
+    letter-spacing:.4px;
+  }
+  nav{
+    display:flex;
+    gap:10px;
+  }
+  .btn{
+    padding:10px 16px;
+    border-radius:999px;
+    border:1px solid rgba(214,177,102,.4);
+    background:rgba(0,0,0,.25);
+    color:#f4efe4;
+    font-size:14px;
+    text-decoration:none;
+  }
+  .btn.primary{
+    background:linear-gradient(#d6b166,#9f6e2a);
+    color:#fff;
+    border:none;
+  }
+
+  /* hero */
+  .hero{
+    margin-top:20px;
+    position:relative;
+    animation:fadeHero 5s ease forwards;
+    opacity:0;
+  }
+  .heroGlow{
+    position:absolute;
+    top:-140px;
+    left:50%;
+    transform:translateX(-50%);
+    width:900px;
+    height:420px;
+    background:radial-gradient(circle,
+      rgba(214,177,102,.45),
+      rgba(214,177,102,.18),
+      transparent 70%);
+    filter:blur(70px);
+    pointer-events:none;
+  }
+  .hero img{
+    width:100%;
+    border-radius:20px;
+    display:block;
+    box-shadow:0 25px 80px rgba(0,0,0,.65);
+  }
+
+  /* hero content */
+  .heroContent{
+    margin-top:28px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+    animation:slideUp 5s ease forwards;
+    animation-delay:1s;
+    opacity:0;
+  }
+  .heroCard{
+    background:rgba(0,0,0,.35);
+    border-radius:20px;
+    padding:24px;
+    border:1px solid rgba(214,177,102,.25);
+  }
+  .heroCard h1{
+    margin:0 0 10px 0;
+    font-size:40px;
+    line-height:1.05;
+  }
+  .heroCard p{
+    color:rgba(255,255,255,.8);
+  }
+  .cta{
+    margin-top:14px;
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+  }
+  .chips{
+    margin-top:14px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+  .chip{
+    font-size:13px;
+    padding:8px 12px;
+    border-radius:999px;
+    border:1px solid rgba(214,177,102,.3);
+    background:rgba(0,0,0,.25);
+  }
+
+  /* NEW: Signature Celebrations */
+  .signature{
+    margin-top:24px;
+    background:rgba(0,0,0,.35);
+    border-radius:20px;
+    padding:22px;
+    border:1px solid rgba(214,177,102,.25);
+    animation:slideUp 5s ease forwards;
+    animation-delay:2s;
+    opacity:0;
+  }
+  .signature h2{
+    margin:0 0 10px 0;
+    font-size:18px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:#d6b166;
+  }
+  .signatureGrid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
+    margin-top:12px;
+  }
+  .sigItem{
+    background:rgba(0,0,0,.22);
+    border:1px solid rgba(214,177,102,.18);
+    border-radius:16px;
+    padding:14px;
+    min-height:64px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+  }
+  .sigTitle{
+    font-weight:700;
+    margin-bottom:4px;
+  }
+  .sigDesc{
+    color:rgba(255,255,255,.72);
+    font-size:13px;
+    line-height:1.4;
+  }
+
+  /* services */
+  .services{
+    margin-top:22px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:14px;
+    animation:slideUp 5s ease forwards;
+    animation-delay:3s;
+    opacity:0;
+  }
+  .service{
+    background:rgba(0,0,0,.35);
+    border-radius:18px;
+    padding:18px;
+    border:1px solid rgba(214,177,102,.2);
+  }
+  .service h3{
+    font-size:13px;
+    letter-spacing:.2em;
+    text-transform:uppercase;
+    color:#d6b166;
+    margin:0 0 8px 0;
+  }
+  .service p{
+    margin:0;
+    color:rgba(255,255,255,.8);
+    line-height:1.55;
+  }
+
+  /* footer */
+  footer{
+    margin-top:28px;
+    padding-top:16px;
+    border-top:1px solid rgba(214,177,102,.2);
+    display:flex;
+    justify-content:space-between;
+    font-size:13px;
+    color:rgba(255,255,255,.65);
+    animation:slideUp 5s ease forwards;
+    animation-delay:4s;
+    opacity:0;
+  }
+  footer a{ color:rgba(214,177,102,.95); text-decoration:none; }
+
+  /* animations (slower) */
+  @keyframes fadeHero{
+    from{opacity:0; transform:translateY(24px);}
+    to{opacity:1; transform:none;}
+  }
+  @keyframes slideUp{
+    from{opacity:0; transform:translateY(46px);}
+    to{opacity:1; transform:none;}
+  }
+
+  /* responsive */
+  @media(max-width:900px){
+    .heroContent{ grid-template-columns:1fr; }
+    .services{ grid-template-columns:1fr; }
+    .signatureGrid{ grid-template-columns:1fr; }
+    .heroCard h1{ font-size:32px; }
+  }
+  @media(max-width:520px){
+    header{ flex-direction:column; align-items:flex-start; gap:10px; }
+    nav{ width:100%; justify-content:flex-start; flex-wrap:wrap; }
+  }
+</style>
+</head>
+
+<body>
+<div class="wrap">
+
+<header>
+  <div class="brand">
+    <img src="assets/PshoPsha_InstaAvatar.png" alt="PshoPsha">
+    <div class="brandName">PshoPsha</div>
+  </div>
+
+  <nav>
+    <a class="btn" href="/sonal/">Contact</a>
+    <a class="btn primary" href="/sonal/">Start Your Celebration</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="heroGlow"></div>
+  <img src="assets/PshoPsha_Brand.png" alt="PshoPsha Brand">
+</section>
+
+<section class="heroContent">
+  <div class="heroCard">
+    <h1>Celebrate with a show that feels unforgettable.</h1>
+    <p>From elegant timelines to high-energy performances — PshoPsha produces cultural shows with taste, precision, and heart.</p>
+
+    <div class="cta">
+      <a class="btn primary" href="/sonal/">Get Started</a>
+      <a class="btn" href="/sonal/">Talk to Sonal</a>
+    </div>
+
+    <div class="chips">
+      <span class="chip">Show Flow</span>
+      <span class="chip">Choreography</span>
+      <span class="chip">Music Edits</span>
+    </div>
+  </div>
+
+  <div class="heroCard">
+    <b>What we deliver</b>
+    <ul style="line-height:1.7;color:rgba(255,255,255,.85); margin-top:10px;">
+      <li>Complete show structure and timing</li>
+      <li>Performance choreography and rehearsals</li>
+      <li>Music sequencing and editing</li>
+      <li>Emcee scripting and stage direction</li>
+    </ul>
+  </div>
+</section>
+
+<!-- NEW SECTION -->
+<section class="signature">
+  <h2>Signature Celebrations</h2>
+  <div style="color:rgba(255,255,255,.8); line-height:1.55;">
+    Mini-wedding energy for milestone moments — designed for family, culture, and memories that last.
+  </div>
+
+  <div class="signatureGrid">
+    <div class="sigItem">
+      <div class="sigTitle">Mehndi Nights</div>
+      <div class="sigDesc">Family performances + high-energy segments</div>
+    </div>
+    <div class="sigItem">
+      <div class="sigTitle">Milestone Birthdays</div>
+      <div class="sigDesc">Tributes, parent moments, and full dhamaal</div>
+    </div>
+    <div class="sigItem">
+      <div class="sigTitle">Anniversaries</div>
+      <div class="sigDesc">Elegant storytelling + celebration flow</div>
+    </div>
+    <div class="sigItem">
+      <div class="sigTitle">Cultural Shows</div>
+      <div class="sigDesc">Run-of-show, scripting, music, rehearsals</div>
+    </div>
+  </div>
+</section>
+
+<section class="services">
+  <div class="service">
+    <h3>Production</h3>
+    <p>Run-of-show planning, cues and transitions so your event flows perfectly.</p>
+  </div>
+  <div class="service">
+    <h3>Performances</h3>
+    <p>Choreography planning and rehearsals that elevate every segment.</p>
+  </div>
+  <div class="service">
+    <h3>Direction</h3>
+    <p>Emcee scripting and show direction that tells a cohesive story.</p>
+  </div>
+</section>
+
+<footer>
+  <div>© <span id="yr"></span> PshoPsha</div>
+  <div><a href="/sonal/">pshopsha.com/sonal</a></div>
+</footer>
+
+</div>
+
+<script>
+  document.getElementById("yr").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
