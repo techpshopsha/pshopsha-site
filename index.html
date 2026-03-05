@@ -157,31 +157,33 @@
       content:"";
       position:absolute; inset:0;
       background:
-        radial-gradient(900px 420px at 20% 78%, rgba(0,0,0,.55), transparent 60%),
-        linear-gradient(180deg, rgba(0,0,0,.25), rgba(0,0,0,.35));
-      pointer-events:none;
+        radial-gradient(900px 420px at 20% 78%, rgba(0,0,0,.35), transparent 65%),
+        linear-gradient(180deg, rgba(0,0,0,.05), rgba(0,0,0,.18));
     }
-
+    
     /* gold “cinematic” glow sweep */
     .glow-sweep{
-      position:absolute; inset:-30%;
-      background: radial-gradient(400px 220px at 30% 40%, rgba(240,213,154,.18), transparent 60%);
+      position:absolute;
+      inset:-30%;
+      background:
+        radial-gradient(500px 260px at 35% 40%, rgba(240,213,154,.35), transparent 65%),
+        radial-gradient(400px 200px at 65% 60%, rgba(216,180,106,.22), transparent 65%);
       mix-blend-mode: screen;
-      animation: sweep 9s ease-in-out infinite;
+      animation: sweep 8s ease-in-out infinite;
       pointer-events:none;
-      opacity:.55;
-      filter: blur(1px);
-    }
+      opacity:.65;
+      filter: blur(2px);
+    }    
     @keyframes sweep{
-      0%   { transform: translate3d(-8%, -6%,0) }
-      50%  { transform: translate3d(10%, 8%,0) }
-      100% { transform: translate3d(-8%, -6%,0) }
+      0% { transform: translate(-6%,-4%) }
+      50% { transform: translate(6%,6%) }
+      100% { transform: translate(-6%,-4%) }
     }
 
     .hero-copy{
       border-radius: var(--radius);
       border:1px solid rgba(216,180,106,.22);
-      background: linear-gradient(180deg, rgba(12,7,7,.70), rgba(12,7,7,.46));
+      background: linear-gradient(180deg, rgba(40,12,14,.78), rgba(28,8,10,.62));
       box-shadow: var(--shadow2);
       padding:22px 22px 18px;
       backdrop-filter: blur(10px);
@@ -242,7 +244,7 @@
     .card{
       border-radius: var(--radius2);
       border:1px solid rgba(216,180,106,.18);
-      background: linear-gradient(180deg, rgba(10,6,6,.52), rgba(10,6,6,.32));
+      background: linear-gradient(180deg, rgba(45,12,14,.55), rgba(30,8,10,.35));
       padding:16px 16px 14px;
       box-shadow: 0 14px 40px rgba(0,0,0,.35);
       backdrop-filter: blur(10px);
