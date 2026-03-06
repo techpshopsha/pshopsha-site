@@ -1,421 +1,313 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>PshoPsha — Cultural Show Producers</title>
-  <meta name="description" content="PshoPsha produces cultural shows with taste, precision, and heart." />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PshoPsha — Cultural Show Producers</title>
 
-  <!-- Luxury serif fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <style>
-    :root{
-      --bg0:#0a0506;
-      --bg1:#16090b;
-      --wine:#2b0a10;
-      --wine2:#3a0f16;
-      --gold:#d8c07a;
-      --gold2:#b89444;
-      --text:#f2eee6;
-      --muted:#d2c8ba;
-      --card:rgba(20,10,12,.62);
-      --stroke:rgba(216,192,122,.35);
-      --shadow:0 20px 70px rgba(0,0,0,.55);
-      --r:22px;
+<style>
 
-      --serif: "Cinzel", ui-serif, Georgia, "Times New Roman", Times, serif;
-      --serif2: "Cormorant Garamond", ui-serif, Georgia, "Times New Roman", Times, serif;
-      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-    }
+body{
+margin:0;
+font-family:Inter, system-ui;
+color:#f5efe6;
 
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      color:var(--text);
-      font-family: var(--sans);
-      background:
-        radial-gradient(900px 500px at 20% 10%, rgba(216,192,122,.10), transparent 60%),
-        radial-gradient(900px 500px at 80% 20%, rgba(122,15,23,.22), transparent 60%),
-        radial-gradient(1200px 700px at 50% 90%, rgba(0,0,0,.55), transparent 60%),
-        linear-gradient(180deg, var(--bg0), var(--bg1));
-      overflow-x:hidden;
-    }
+background:
+radial-gradient(circle at 20% 10%, rgba(216,192,122,.1), transparent 40%),
+radial-gradient(circle at 80% 20%, rgba(120,20,40,.2), transparent 40%),
+linear-gradient(#1a0708,#0c0405);
 
-    .wrap{max-width:1100px;margin:0 auto;padding:18px 18px 70px}
+}
 
-    /* sticky top bar */
-    .topbar{
-      position:sticky; top:0; z-index:20;
-      backdrop-filter: blur(10px);
-      background: linear-gradient(180deg, rgba(10,5,6,.72), rgba(10,5,6,.24));
-      border-bottom:1px solid rgba(216,192,122,.10);
-    }
-    .topbar-inner{
-      max-width:1100px;margin:0 auto;
-      padding:12px 18px;
-      display:flex;align-items:center;justify-content:space-between;gap:14px;
-    }
-    .brand{
-      display:flex;align-items:center;gap:12px;min-width:0;
-    }
-    .avatar{
-      width:44px;height:44px;border-radius:14px;flex:0 0 auto;
-      overflow:hidden;
-      border:1px solid rgba(216,192,122,.22);
-      box-shadow: 0 10px 30px rgba(0,0,0,.35);
-      background: rgba(255,255,255,.03);
-    }
-    .avatar img{width:100%;height:100%;object-fit:cover;display:block}
-    .brandText{min-width:0}
-    .brandName{
-      font-family: var(--serif);
-      font-weight:700;
-      letter-spacing:.2px;
-      font-size:18px;
-      line-height:1.1;
-      margin:0;
-    }
-    .brandTag{
-      font-family: var(--serif2);
-      margin:3px 0 0;
-      font-size:12px;
-      letter-spacing:.22em;
-      text-transform:uppercase;
-      color:rgba(216,192,122,.85);
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
-    }
-    .actions{display:flex;align-items:center;gap:10px;flex:0 0 auto}
-    .btn{
-      appearance:none;border:1px solid rgba(216,192,122,.38);
-      background: rgba(0,0,0,.12);
-      color:var(--text);
-      padding:10px 14px;
-      border-radius:999px;
-      font-size:13px;
-      font-weight:600;
-      letter-spacing:.2px;
-      cursor:pointer;
-      transition: transform .15s ease, background .15s ease, border-color .15s ease;
-      text-decoration:none;
-      display:inline-flex;align-items:center;justify-content:center;
-      white-space:nowrap;
-    }
-    .btn:hover{transform: translateY(-1px); background: rgba(216,192,122,.10); border-color: rgba(216,192,122,.55)}
-    .btn.primary{
-      background: linear-gradient(180deg, rgba(216,192,122,.92), rgba(184,148,68,.92));
-      color:#1a0b0c;
-      border-color: rgba(216,192,122,.65);
-      box-shadow: 0 12px 35px rgba(0,0,0,.35);
-    }
-    .btn.primary:hover{background: linear-gradient(180deg, rgba(216,192,122,.98), rgba(184,148,68,.98));}
+/* nav */
 
-    /* hero */
-    .hero{
-      position:relative;
-      margin-top:16px;
-      border-radius: 28px;
-      overflow:hidden;
-      border:1px solid rgba(216,192,122,.12);
-      box-shadow: var(--shadow);
-      background: rgba(0,0,0,.25);
-      min-height: 520px;
-    }
+.nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:16px 28px;
+backdrop-filter:blur(10px);
+border-bottom:1px solid rgba(216,192,122,.15);
+}
 
-    /* Floating golden particles layer (CSS only) */
-    .particles{
-      position:absolute; inset:-20%;
-      pointer-events:none;
-      opacity:.55;
-      filter: blur(.2px);
-    }
-    .particle{
-      position:absolute;
-      width:3px; height:3px;
-      border-radius:999px;
-      background: radial-gradient(circle, rgba(216,192,122,1), rgba(216,192,122,.25) 60%, transparent 70%);
-      box-shadow: 0 0 14px rgba(216,192,122,.25);
-      animation: floatUp linear infinite;
-    }
-    @keyframes floatUp{
-      from{ transform: translate3d(var(--x,0px), 60vh, 0) scale(var(--s,1)); opacity:0 }
-      10%{ opacity: var(--o,.8) }
-      80%{ opacity: var(--o,.8) }
-      to{ transform: translate3d(var(--x,0px), -70vh, 0) scale(var(--s,1)); opacity:0 }
-    }
+.brand{
+display:flex;
+align-items:center;
+gap:12px;
+}
 
-    /* Hero image with subtle parallax transform */
-    .hero-media{
-      position:absolute; inset:0;
-      transform: translate3d(0,0,0);
-      will-change: transform;
-    }
-    .hero-media::after{
-      content:"";
-      position:absolute; inset:0;
-      background: radial-gradient(900px 500px at 30% 30%, rgba(0,0,0,.10), rgba(0,0,0,.60));
-    }
-    .hero-media img{
-      width:100%; height:100%; object-fit: cover;
-      display:block;
-      transform: scale(1.06); /* a bit larger so parallax doesn't show edges */
-      filter: saturate(1.02) contrast(1.02);
-    }
+.brand img{
+width:44px;
+height:44px;
+border-radius:12px;
+}
 
-    /* content inside hero */
-    .hero-inner{
-      position:relative;
-      height:100%;
-      display:grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap:22px;
-      padding:26px;
-      align-items:end;
-    }
+.brand-title{
+font-family:"Playfair Display", serif;
+font-size:20px;
+}
 
-    .copy{
-      max-width:520px;
-      padding:20px 20px 18px;
-      border-radius: 22px;
-      background: rgba(10,5,6,.58);
-      border: 1px solid rgba(216,192,122,.18);
-      box-shadow: 0 18px 60px rgba(0,0,0,.45);
-      backdrop-filter: blur(10px);
-    }
-    .headline{
-      margin:0 0 10px;
-      font-family: var(--serif);
-      font-weight:700;
-      letter-spacing:.2px;
-      font-size: 46px;
-      line-height:1.05;
-    }
-    .sub{
-      margin:0 0 16px;
-      font-family: var(--serif2);
-      font-size:18px;
-      line-height:1.45;
-      color: rgba(242,238,230,.86);
-    }
+.cta{
+background:linear-gradient(#e3c77c,#cda24c);
+color:#2c1700;
+padding:10px 18px;
+border-radius:30px;
+font-weight:600;
+text-decoration:none;
+}
 
-    .ctaRow{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
-    .pills{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
-    .pill{
-      font-size:12px;
-      padding:9px 12px;
-      border-radius:999px;
-      border:1px solid rgba(216,192,122,.26);
-      color: rgba(242,238,230,.88);
-      background: rgba(0,0,0,.16);
-      font-family: var(--serif2);
-      letter-spacing:.2px;
-    }
+/* layout */
 
-    /* below hero cards */
-    .grid{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap:16px;
-      margin-top:18px;
-    }
-    .card{
-      border-radius: 20px;
-      padding:16px 16px 14px;
-      background: linear-gradient(180deg, rgba(20,10,12,.58), rgba(0,0,0,.22));
-      border:1px solid rgba(216,192,122,.12);
-      box-shadow: 0 16px 50px rgba(0,0,0,.35);
-      min-height: 130px;
-    }
-    .card h3{
-      margin:0 0 8px;
-      font-family: var(--serif);
-      letter-spacing:.14em;
-      text-transform:uppercase;
-      font-size:12px;
-      color: rgba(216,192,122,.90);
-    }
-    .card p{
-      margin:0;
-      font-family: var(--serif2);
-      font-size:15px;
-      line-height:1.45;
-      color: rgba(242,238,230,.84);
-    }
+.container{
+max-width:1100px;
+margin:auto;
+padding:30px 20px 80px;
+}
 
-    .footer{
-      margin-top:18px;
-      text-align:center;
-      color: rgba(216,192,122,.70);
-      font-family: var(--serif2);
-      font-size:12px;
-      letter-spacing:.08em;
-    }
+/* hero image */
 
-    /* responsive */
-    @media (max-width: 980px){
-      .hero{min-height: 560px}
-      .hero-inner{grid-template-columns: 1fr; align-items:end}
-      .copy{max-width: 100%}
-      .headline{font-size: 40px}
-      .grid{grid-template-columns: 1fr; }
-    }
-    @media (max-width: 520px){
-      .brandTag{display:none}
-      .headline{font-size: 38px}
-      .btn{padding:10px 12px}
-    }
+.hero{
+border-radius:28px;
+overflow:hidden;
+box-shadow:0 40px 100px rgba(0,0,0,.6);
+border:1px solid rgba(216,192,122,.25);
+position:relative;
+}
 
-    /* reduce motion preference */
-    @media (prefers-reduced-motion: reduce){
-      .particle{animation:none}
-    }
-  </style>
+.hero img{
+width:100%;
+display:block;
+transform:scale(1.03);
+transition:transform .2s ease-out;
+}
+
+/* subtle particles */
+
+canvas{
+position:absolute;
+inset:0;
+pointer-events:none;
+opacity:.5;
+}
+
+/* text section BELOW hero */
+
+.intro{
+margin-top:26px;
+padding:30px;
+border-radius:22px;
+background:rgba(20,8,10,.75);
+border:1px solid rgba(216,192,122,.2);
+}
+
+.intro h1{
+font-family:"Playfair Display", serif;
+font-size:44px;
+margin:0 0 14px;
+line-height:1.1;
+}
+
+.intro p{
+color:#ddd;
+font-size:18px;
+line-height:1.6;
+max-width:680px;
+}
+
+.intro-buttons{
+margin-top:18px;
+display:flex;
+gap:14px;
+flex-wrap:wrap;
+}
+
+.pill{
+border:1px solid rgba(216,192,122,.4);
+padding:8px 12px;
+border-radius:20px;
+font-size:13px;
+}
+
+/* cards */
+
+.cards{
+margin-top:28px;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:18px;
+}
+
+.card{
+padding:22px;
+border-radius:18px;
+background:rgba(30,10,12,.7);
+border:1px solid rgba(216,192,122,.2);
+}
+
+.card h3{
+color:#d8c07a;
+font-size:13px;
+letter-spacing:2px;
+margin:0 0 10px;
+}
+
+@media(max-width:900px){
+
+.cards{
+grid-template-columns:1fr;
+}
+
+.intro h1{
+font-size:34px;
+}
+
+}
+
+</style>
 </head>
 
 <body>
-  <div class="topbar">
-    <div class="topbar-inner">
-      <div class="brand">
-        <div class="avatar">
-          <img src="assets/PshoPsha_InstaAvatar.png" alt="PshoPsha logo avatar">
-        </div>
-        <div class="brandText">
-          <p class="brandName">PshoPsha</p>
-          <p class="brandTag">CULTURAL SHOW PRODUCERS</p>
-        </div>
-      </div>
 
-      <div class="actions">
-        <!-- One primary CTA only -->
-        <a class="btn primary" href="/sonal">Start Your Celebration</a>
-      </div>
-    </div>
-  </div>
+<div class="nav">
 
-  <div class="wrap">
-    <section class="hero" aria-label="PshoPsha hero">
-      <!-- Parallax hero image -->
-      <div class="hero-media" id="heroMedia">
-        <img src="assets/PshoPsha_Brand.png" alt="PshoPsha brand hero image">
-      </div>
+<div class="brand">
+<img src="assets/PshoPsha_InstaAvatar.png">
+<div class="brand-title">PshoPsha</div>
+</div>
 
-      <!-- Floating particles -->
-      <div class="particles" aria-hidden="true" id="particles"></div>
+<a class="cta" href="/sonal/">Start Your Celebration</a>
 
-      <div class="hero-inner">
-        <div class="copy">
-          <h1 class="headline">Celebrate with a show<br>that feels unforgettable.</h1>
-          <p class="sub">
-            From elegant timelines to high-energy performances — PshoPsha produces cultural shows with taste, precision, and heart.
-          </p>
+</div>
 
-          <div class="ctaRow">
-            <a class="btn primary" href="/sonal">Start Your Celebration</a>
-          </div>
+<div class="container">
 
-          <div class="pills" aria-label="services">
-            <span class="pill">Show Flow + Run of Show</span>
-            <span class="pill">Choreography + Rehearsals</span>
-            <span class="pill">Music Edits + Emcee Script</span>
-          </div>
-        </div>
+<!-- HERO IMAGE -->
 
-        <!-- Right side intentionally empty so the brand image stays center stage -->
-        <div></div>
-      </div>
-    </section>
+<div class="hero">
 
-    <section class="grid" aria-label="service highlights">
-      <div class="card">
-        <h3>Production</h3>
-        <p>Complete show structure, cues, transitions, and timing so the event feels smooth and premium.</p>
-      </div>
-      <div class="card">
-        <h3>Performances</h3>
-        <p>Choreography support, practice planning, and polishing acts so every segment lands with impact.</p>
-      </div>
-      <div class="card">
-        <h3>Direction</h3>
-        <p>Emcee scripting, music sequencing, and rehearsal direction — so your celebration tells a story.</p>
-      </div>
-    </section>
+<img id="heroImg" src="assets/PshoPsha_Brand.png">
 
-    <div class="footer">pshopsha.com</div>
-  </div>
+<canvas id="particles"></canvas>
 
-  <script>
-    // --- Floating particles (gold dust) ---
-    (function makeParticles(){
-      const root = document.getElementById('particles');
-      if (!root) return;
+</div>
 
-      const COUNT = 34; // lightweight
-      for (let i = 0; i < COUNT; i++){
-        const p = document.createElement('span');
-        p.className = 'particle';
 
-        // randomize size/opacity/speed/position
-        const size = (Math.random() * 2.6 + 1.4); // 1.4 - 4px
-        const left = Math.random() * 100; // %
-        const delay = -(Math.random() * 14); // start mid-animation
-        const dur = (Math.random() * 10 + 10); // 10-20s
-        const drift = (Math.random() * 240 - 120); // px left/right drift
-        const opacity = (Math.random() * .45 + .25).toFixed(2);
+<!-- TEXT SECTION BELOW -->
 
-        p.style.left = left + '%';
-        p.style.top = (Math.random() * 100) + '%';
-        p.style.width = size + 'px';
-        p.style.height = size + 'px';
-        p.style.animationDuration = dur + 's';
-        p.style.animationDelay = delay + 's';
-        p.style.setProperty('--x', drift + 'px');
-        p.style.setProperty('--s', (Math.random() * .7 + .7).toFixed(2));
-        p.style.setProperty('--o', opacity);
+<div class="intro">
 
-        root.appendChild(p);
-      }
-    })();
+<h1>Celebrate with a show that feels unforgettable.</h1>
 
-    // --- Subtle parallax on hero image (mouse + tiny scroll) ---
-    (function parallax(){
-      const el = document.getElementById('heroMedia');
-      if (!el) return;
+<p>
+From elegant timelines to high-energy performances — PshoPsha produces cultural shows with taste, precision, and heart.
+</p>
 
-      let mx = 0, my = 0, sy = 0; // mouse x/y and scroll y
-      let tx = 0, ty = 0;
+<div class="intro-buttons">
 
-      function onMove(e){
-        const r = el.getBoundingClientRect();
-        const x = (e.clientX - (r.left + r.width/2)) / (r.width/2);
-        const y = (e.clientY - (r.top + r.height/2)) / (r.height/2);
-        mx = Math.max(-1, Math.min(1, x));
-        my = Math.max(-1, Math.min(1, y));
-      }
+<a class="cta" href="/sonal/">Start Your Celebration</a>
 
-      function onScroll(){
-        sy = window.scrollY || 0;
-      }
+</div>
 
-      function tick(){
-        // target translate values (very subtle)
-        const targetX = mx * 8;                 // px
-        const targetY = my * 6 + (sy * 0.02);   // px
-        tx += (targetX - tx) * 0.06;
-        ty += (targetY - ty) * 0.06;
+<div style="margin-top:16px; display:flex; gap:10px; flex-wrap:wrap;">
 
-        el.style.transform = `translate3d(${tx}px, ${ty}px, 0)`;
-        requestAnimationFrame(tick);
-      }
+<div class="pill">Show Flow + Run of Show</div>
+<div class="pill">Choreography + Rehearsals</div>
+<div class="pill">Music Edits + Emcee Script</div>
 
-      window.addEventListener('mousemove', onMove, {passive:true});
-      window.addEventListener('scroll', onScroll, {passive:true});
-      tick();
-    })();
-  </script>
+</div>
+
+</div>
+
+
+<div class="cards">
+
+<div class="card">
+<h3>PRODUCTION</h3>
+Complete show structure, cues, transitions, and timing so the event feels smooth and premium.
+</div>
+
+<div class="card">
+<h3>PERFORMANCES</h3>
+Choreography support, practice planning, and polishing acts so every segment lands with impact.
+</div>
+
+<div class="card">
+<h3>DIRECTION</h3>
+Emcee scripting, music sequencing, and rehearsal direction so your celebration tells a story.
+</div>
+
+</div>
+
+</div>
+
+
+<script>
+
+/* subtle parallax */
+
+const img=document.getElementById("heroImg");
+
+window.addEventListener("scroll",()=>{
+const y=window.scrollY*0.04;
+img.style.transform=`translateY(${y}px) scale(1.03)`;
+});
+
+
+/* floating particles */
+
+const canvas=document.getElementById("particles");
+const ctx=canvas.getContext("2d");
+
+function resize(){
+canvas.width=canvas.offsetWidth;
+canvas.height=canvas.offsetHeight;
+}
+resize();
+window.addEventListener("resize",resize);
+
+let particles=[];
+
+for(let i=0;i<30;i++){
+
+particles.push({
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+r:Math.random()*2,
+v:Math.random()*0.3
+})
+
+}
+
+function draw(){
+
+ctx.clearRect(0,0,canvas.width,canvas.height);
+
+ctx.fillStyle="rgba(216,192,122,.6)";
+
+particles.forEach(p=>{
+
+ctx.beginPath();
+ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+ctx.fill();
+
+p.y-=p.v;
+
+if(p.y<0){
+p.y=canvas.height;
+p.x=Math.random()*canvas.width;
+}
+
+})
+
+requestAnimationFrame(draw)
+
+}
+
+draw()
+
+</script>
+
 </body>
 </html>
