@@ -1,5 +1,6 @@
 <!-- PSHOPSHA Landing Page v1 -->
 <!-- Layout: hero image center stage, box below -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -133,6 +134,49 @@ border-radius:20px;
 font-size:13px;
 }
 
+/* celebrations we produce */
+
+.events{
+margin-top:28px;
+padding:28px;
+border-radius:22px;
+background:rgba(30,10,12,.7);
+border:1px solid rgba(216,192,122,.2);
+}
+
+.events h2{
+font-family:"Playfair Display", serif;
+font-size:32px;
+margin:0 0 20px 0;
+}
+
+.event-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:18px;
+}
+
+.event{
+padding:18px;
+border-radius:16px;
+background:rgba(0,0,0,.25);
+border:1px solid rgba(216,192,122,.2);
+}
+
+.event h3{
+color:#d8c07a;
+font-size:15px;
+margin:0 0 8px 0;
+}
+
+.event p{
+font-size:14px;
+color:#ddd;
+line-height:1.5;
+margin:0;
+}
+
+
 /* cards */
 
 .cards{
@@ -159,6 +203,10 @@ margin:0 0 10px;
 @media(max-width:900px){
 
 .cards{
+grid-template-columns:1fr;
+}
+
+.event-grid{
 grid-template-columns:1fr;
 }
 
@@ -241,6 +289,33 @@ From elegant timelines to high-energy performances — PshoPsha produces cultura
 
 </div>
 
+</div>
+
+
+
+<div class="events">
+
+  <h2>Celebrations We Produce</h2>
+    
+  <div class="event-grid">
+    
+    <div class="event">
+      <h3>Mehndi Night Shows</h3>
+      <p>Family choreography, music edits, and a coordinated evening that turns Mehndi into a joyful cultural show.</p>
+    </div>
+    
+    <div class="event">
+      <h3>Milestone Birthdays</h3>
+      <p>50th birthdays and special milestones transformed into unforgettable evenings of performances, tributes, and storytelling.</p>
+    </div>
+    
+    <div class="event">
+      <h3>Family Dance Productions</h3>
+      <p>Parents, siblings, and friends performing together in choreographed segments that create memories for a lifetime.</p>
+    </div>
+    
+  </div>
+    
 </div>
 
 
