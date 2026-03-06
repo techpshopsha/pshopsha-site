@@ -137,11 +137,11 @@ font-size:13px;
 /* celebrations we produce */
 
 .events{
-margin-top:28px;
-padding:28px;
+margin-top:46px;
+padding:34px 32px;
 border-radius:22px;
-background:rgba(30,10,12,.7);
-border:1px solid rgba(216,192,122,.2);
+background:rgba(30,10,12,.72);
+border:1px solid rgba(216,192,122,.25);
 }
 
 .events h2{
@@ -176,11 +176,48 @@ line-height:1.5;
 margin:0;
 }
 
+/* CTA section */
+
+.cta-section{
+margin-top:70px;
+padding:50px 34px;
+text-align:center;
+border-radius:22px;
+background:linear-gradient(#3a0b10,#1a0607);
+border:1px solid rgba(216,192,122,.35);
+}
+
+.cta-section h2{
+font-family:"Playfair Display", serif;
+font-size:34px;
+margin-bottom:14px;
+}
+
+.cta-section p{
+color:#ddd;
+margin-bottom:24px;
+font-size:16px;
+}
+
+.cta-large{
+display:inline-block;
+padding:14px 28px;
+border-radius:999px;
+background:linear-gradient(#e3c77c,#cda24c);
+color:#2b1406;
+font-weight:600;
+text-decoration:none;
+box-shadow:0 8px 20px rgba(0,0,0,.4);
+}
+
+.cta-large:hover{
+transform:translateY(-2px);
+}
 
 /* cards */
 
 .cards{
-margin-top:28px;
+margin-top:42px;
 display:grid;
 grid-template-columns:repeat(3,1fr);
 gap:18px;
@@ -201,6 +238,7 @@ margin:0 0 10px;
 }
 
 @media(max-width:900px){
+
 
 .cards{
 grid-template-columns:1fr;
@@ -406,6 +444,18 @@ requestAnimationFrame(draw)
 draw()
 
 </script>
+
+<div class="cta-section">
+
+    <h2>Ready to create a celebration your family will never forget?</h2>
+    
+    <p>
+    Tell us about your event and we'll help shape it into a beautiful cultural show.
+    </p>
+    
+    <a class="cta-large" href="/sonal/">Start Your Celebration</a>
+    
+</div>
 
 </body>
 </html>
